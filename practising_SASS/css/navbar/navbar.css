@@ -1,0 +1,15 @@
+.navBar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.navBar a {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+.navBar a:hover {
+  color: orange;
+  text-decoration-line: underline;
+}

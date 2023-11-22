@@ -1,0 +1,110 @@
+@use "SASS/variables.scss";
+
+.navBar {
+  display: none;
+  background-color: black;
+  border-bottom: 1px grey solid;
+  padding-top: 20px;
+  padding-right: 20px;
+  z-index: 11;
+  position: fixed;
+  width: 100%;
+  justify-content: end;
+  top: 0px;
+
+  a {
+    margin-left: 5%;
+    font-size: 25px;
+    text-decoration: none;
+    color: variables.$secondaryColor;
+  }
+  a:hover {
+    text-decoration-line: underline;
+  }
+  img {
+    display: none;
+  }
+
+  .menu-toggle {
+    cursor: pointer;
+    display: none;
+    margin: 10px;
+  }
+
+  .bar {
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    a {
+      display: none;
+    }
+    .bar1 {
+      display: none;
+    }
+    .bar0 {
+      transform: rotate(45deg) translate(0px, 5px);
+    }
+    .bar2 {
+      transform: rotate(-45deg) translate(0px, -5px);
+    }
+  }
+}
+
+.hamburgerNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburgerNav {
+    animation: SlideRight1 0.6s ease-in;
+    background-color: beige;
+    background: linear-gradient(
+      348deg,
+      rgba(0, 0, 0, 0.86) 6%,
+      rgba(0, 0, 0, 1) 94%
+    );
+    background-color: beige;
+    z-index: 1;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    width: 80vw;
+    min-width: 200px;
+    max-width: 600px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      width: 100%;
+      margin: 1% 0;
+      text-align: center;
+      font-size: 32px;
+      text-decoration: none;
+      color: orange;
+    }
+  }
+  .hamburgerNav-active {
+    display: flex;
+  }
+}
+.scrollDisalbed {
+  overflow: hidden;
+}
+
+@keyframes SlideRight1 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

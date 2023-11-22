@@ -1,0 +1,374 @@
+@use "heroBanner/_heroBannerImg.scss";
+@use "heroBanner/_heroBannerContent.scss";
+@use "navbar/_navbar.scss";
+@use "variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&family=Roboto:wght@300&family=Rubik&family=Zen+Tokyo+Zoo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 350px;
+}
+
+.aboutMeSection {
+  color: variables.$primaryColor;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.836);
+  padding: 20vh 0;
+  text-align: center;
+
+  h2 {
+    opacity: 0;
+    font-size: variables.$fontL;
+    color: variables.$secondaryColor;
+  }
+  h3 {
+    opacity: 0;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 80%;
+    font-size: variables.$fontM;
+    b {
+      color: variables.$secondaryColor;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 800px) {
+    h2 {
+      font-size: variables.$fontLTablet;
+    }
+    h3 {
+      font-size: variables.$fontMTablet;
+    }
+  }
+}
+
+.skillsSection {
+  gap: 10px;
+  padding: 20vh 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-wrap: wrap;
+  h2 {
+    opacity: 0;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    color: variables.$secondaryColor;
+  }
+  div {
+    opacity: 0;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(252, 164, 0, 0.37);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-top: 50px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h3 {
+      color: variables.$primaryColor;
+      font-size: variables.$fontM;
+      text-decoration-line: underline;
+      text-decoration-color: variables.$secondaryColor;
+    }
+    p {
+      font-size: variables.$fontSMobile;
+      color: variables.$primaryColor;
+    }
+  }
+  div:hover {
+    background-color: variables.$secondaryColorDark;
+    h3,
+    p {
+      color: black;
+    }
+  }
+
+  @media (min-width: 720px) {
+    div {
+      width: 300px;
+    }
+  }
+}
+
+.projects {
+  padding: 20vh 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.836);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  .arrow {
+    margin-top: 384px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  .projectsDescription {
+    text-align: center;
+    opacity: 0;
+    width: 600px;
+    h2 {
+      color: variables.$secondaryColor;
+      font-size: variables.$fontL;
+    }
+    p {
+      color: variables.$primaryColor;
+      font-size: variables.$fontM;
+    }
+  }
+  .projectsImg {
+    opacity: 0;
+    height: 800px;
+    width: 800px;
+    display: flex;
+    #slide0,
+    #slide2 {
+      border-radius: 20px;
+      border: grey 2px solid;
+      width: 200px;
+      height: 426px;
+      margin: 187px 0;
+    }
+    #slide1 {
+      border-radius: 20px;
+      border: grey 2px solid;
+      width: 300px;
+      height: 640px;
+      margin: 70px 50px;
+    }
+
+    #slide0,
+    #slide1,
+    #slide2 {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #slide0:hover:before,
+    #slide1:hover:before,
+    #slide2:hover:before {
+      border-radius: 18px;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      animation: fadeIn 0.3s ease-in-out forwards;
+      background-color: rgba(0, 0, 0, 0.9);
+      mix-blend-mode: multiply;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .projectsDescription {
+      width: 80%;
+      margin: auto;
+      h2 {
+        color: variables.$secondaryColor;
+        font-size: variables.$fontLTablet;
+      }
+      p {
+        color: variables.$primaryColor;
+        font-size: variables.$fontMTablet;
+      }
+    }
+    .projectsImg {
+      height: 512px;
+      width: 650px;
+
+      .arrow {
+        margin-top: 240px;
+      }
+
+      #slide0,
+      #slide2 {
+        width: 160px;
+        height: 340px;
+        margin: 86px 0;
+      }
+
+      #slide1 {
+        width: 240px;
+        height: 512px;
+        margin: 0px 40px;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .projectsImg {
+      justify-content: center;
+      height: 600px;
+      width: fit-content;
+
+      .arrow {
+        margin-top: 284px;
+      }
+
+      #slide0,
+      #slide2 {
+        display: none;
+      }
+
+      #slide1 {
+        width: 312px;
+        height: 600px;
+        margin: 0 10px;
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    .projectsImg {
+      justify-content: center;
+      height: 510px;
+
+      .arrow {
+        margin-top: 239px;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+      }
+
+      #slide1 {
+        width: 265px;
+        height: 510px;
+      }
+    }
+  }
+}
+
+.contact {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  padding: 50px;
+  background-color: black;
+
+  h2 {
+    font-size: variables.$fontL;
+    color: variables.$secondaryColor;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: variables.$fontM;
+    color: variables.$primaryColor;
+  }
+  div {
+    padding: auto;
+    div {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      img {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        filter: invert(100%);
+      }
+    }
+  }
+}
+.animationArrow {
+  animation: float1 0.3s ease-in;
+}
+
+.animationArrow1 {
+  animation: float2 0.3s ease-in;
+}
+
+.animationSlides {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.animationSlideInFromLeft {
+  opacity: 1 !important;
+  animation: slideInFromLeft 0.5s ease-in;
+}
+
+.animationSlideInFromRight {
+  opacity: 1 !important;
+  animation: slideInFromRight 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float1 {
+  from,
+  to {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50%, 0);
+  }
+}
+@keyframes float2 {
+  from,
+  to {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

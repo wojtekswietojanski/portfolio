@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <nav class="hamburgerNav">
+      <a href="#aboutMeSection">ABOUT ME</a>
+      <a href="#skillsSection">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <nav class="navBar">
+      <a href="#aboutMeSection">ABOUT ME</a>
+      <a href="#skillsSection">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    <div
+      class="heroImg"
+      style="background-image: url('images\\codePicture.webp')"
+    >
+      <h1 class="heroTitle">
+        WOJCIECH ŚWIĘTOJAŃSKI <strong>-FORONTEND DEVELOPER</strong>
+      </h1>
+      <button class="heroButton" onclick="scrollToElement()">
+        <img src="images\arrow-down.png" alt="" />
+      </button>
+    </div>
+    <section class="aboutMeSection" id="aboutMeSection">
+      <h2>ABOUT ME</h2>
+      <h3>
+        CZEŚĆ JESTEM WOJTEK, MAM 21 LAT JESTEM STUDENTEM POLITECHNIKI
+        WARSZAWSKIEJ. MOJA PASJA TO FRONTEND DEVELOPMENT SZUKAAM PRACY BĄDŹ,
+        STAŻU W TEJ GAŁĘZI IT. PONIŻEJ ZNAJDUJE SIĘ KILKA SŁÓW O MOICH
+        UMIEJĘTNOŚCIACH ORAZ PRZYKŁADOWE PROJEKTY. ZAPRASZAM DO <b>KONTAKTU</b>
+      </h3>
+    </section>
+    <section class="skillsSection" id="skillsSection">
+      <h2>UMIEJĘTNOŚCI TECHNICZNE</h2>
+      <div>
+        <h3>HTML</h3>
+        <p>
+          Jest to podstawa, którą bardzo dobrze opanowałem. Zagadnienia takie
+          jak sematyczność html nie są mi obce
+        </p>
+      </div>
+      <div>
+        <h3>CSS/SASS</h3>
+        <p>
+          Umiem odwzorować zgodnie z zasadą pixelperfect dużą większość stron
+          przy użyciu tych narzędzi
+        </p>
+      </div>
+      <div>
+        <h3>JAVASCRIPT/TYPESCRIPT</h3>
+        <p>
+          Umiem dobrze programowac zarówno w Typescript jak i vanilla Javascript
+        </p>
+      </div>
+      <div>
+        <h3>GIT</h3>
+        <p>
+          Dobrze znam system kontroli wersji GIT i wszystkie moje projekty
+          umieszczam w repozytorium
+        </p>
+      </div>
+      <div>
+        <h3>REACT</h3>
+        <p>Work in progress</p>
+      </div>
+      <div>
+        <h3>BOOTSRAP</h3>
+        <p>Work in progress</p>
+      </div>
+    </section>
+    <section class="projects" id="projects">
+      <div class="projectsDescription">
+        <h2>MOJE PROJEKTY</h2>
+        <p>
+          Projekty, które realizuje korzystają z technologi takich jak react,
+          typescript, SASS i inne. Dbam o zachowanie czystośći i czytelności
+          kodu oraz stosuję semantyczny html
+        </p>
+      </div>
+      <div class="projectsImg">
+        <img src="images/left-arrow.png" class="arrow" id="arrow" />
+        <div id="slide0"></div>
+        <div id="slide1"></div>
+        <div id="slide2"></div>
+        <img src="images/right-arrow.png" class="arrow" id="arrow1" />
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>KONTAKT</h2>
+      <p>
+        Jeśli zainteresowało cie moje portfolio i masz dla mnie jakąś ofertę,
+        radę czy komentarz zadzwoń do mnie lub wyślij SMS bądź maila
+      </p>
+      <div>
+        <div>
+          <img src="/images/mail (1).png" alt="" />
+          <p>wojswiet02@gmail.com</p>
+        </div>
+        <div>
+          <img src="/images/phone-call.png" alt="" />
+          <p>606 441 451</p>
+        </div>
+      </div>
+    </section>
+    <script src="javascript/script.js"></script>
+  </body>
+</html>

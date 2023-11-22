@@ -1,0 +1,84 @@
+@use "SASS/variables.scss";
+$window-width: window-width();
+$centerHeight: calc((100vw * 9) / 40);
+
+.heroTitle {
+  max-width: fit-content;
+  font-size: variables.$fontL;
+  color: variables.$primaryColor;
+  overflow: hidden;
+  border-right: 0.15em solid variables.$secondaryColor;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  strong {
+    color: variables.$secondaryColor;
+  }
+  margin: auto;
+  margin-top: $centerHeight;
+}
+
+.heroButton {
+  cursor: pointer;
+  animation: float 1.5s ease-in infinite;
+  animation-delay: 3s;
+  border-radius: 50%;
+  padding: 5px 0;
+  width: 50px;
+  margin: auto;
+  border: variables.$secondaryColor 4px solid;
+  background: none;
+  img {
+    max-width: 70%;
+  }
+  margin-top: 20vh;
+}
+
+@media (max-width: 1050px) {
+  .heroTitle {
+    font-size: variables.$fontLTablet;
+  }
+}
+
+@media (max-width: 800px) {
+  .heroTitle {
+    strong {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .heroTitle {
+    font-size: variables.$fontLMobile;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: variables.$secondaryColor;
+  }
+}
+
+@keyframes float {
+  from,
+  to {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 100%);
+  }
+}
