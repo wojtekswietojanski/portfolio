@@ -16,7 +16,7 @@ document.addEventListener("scroll", () => {
 // Hamburger
 var bars = document.querySelectorAll(".bar");
 
-document.getElementById("mobile-menu").addEventListener("click", () => {
+hamburgerAction = () => {
   document
     .querySelector(".hamburgerNav")
     .classList.toggle("hamburgerNav-active");
@@ -29,6 +29,11 @@ document.getElementById("mobile-menu").addEventListener("click", () => {
   } else {
     console.error("powinny być 3 elementy bar");
   }
+  document.querySelector(".navBar").classList.toggle("navbarHidden");
+};
+
+document.getElementById("mobile-menu").addEventListener("click", () => {
+  hamburgerAction();
 });
 
 // Slajdy
