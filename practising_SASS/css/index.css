@@ -211,10 +211,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  min-width: 350px;
-}
-
 .aboutMeSection {
   color: white;
   width: 100%;
@@ -359,10 +355,42 @@ body {
   background-position: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
-.projects .projectsImg #slide0:hover:before,
-.projects .projectsImg #slide1:hover:before,
-.projects .projectsImg #slide2:hover:before {
+.projects .projectsImg #slide0 a,
+.projects .projectsImg #slide1 a,
+.projects .projectsImg #slide2 a {
+  animation: fadeIn 0.3s ease-in-out forwards;
+  display: none;
+  border: none;
+  z-index: 2;
+  position: relative;
+  color: orange;
+  text-decoration: none;
+  border: 2px orange solid;
+  background: none;
+  font-size: 25px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.projects .projectsImg #slide0 a:hover,
+.projects .projectsImg #slide1 a:hover,
+.projects .projectsImg #slide2 a:hover {
+  background-color: orange;
+  color: white;
+  transform: translateY(5px);
+}
+.projects .projectsImg #slide0 .hoverOverSlide,
+.projects .projectsImg #slide1 .hoverOverSlide,
+.projects .projectsImg #slide2 .hoverOverSlide {
+  display: block;
+}
+.projects .projectsImg #slide0:hover::after,
+.projects .projectsImg #slide1:hover::after,
+.projects .projectsImg #slide2:hover:after {
   border-radius: 18px;
   content: "";
   position: absolute;
@@ -372,7 +400,6 @@ body {
   left: 0;
   animation: fadeIn 0.3s ease-in-out forwards;
   background-color: rgba(0, 0, 0, 0.9);
-  mix-blend-mode: multiply;
 }
 @media (max-width: 850px) {
   .projects .projectsDescription {

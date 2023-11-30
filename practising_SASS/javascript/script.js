@@ -13,6 +13,14 @@ document.addEventListener("scroll", () => {
   document.querySelector(".navBar").style.display = "flex";
 });
 
+// Link do kontaktu w sekcji about me
+contactLink = () => {
+  document.querySelector("#contact").scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 // Hamburger
 var bars = document.querySelectorAll(".bar");
 
@@ -38,11 +46,38 @@ document.getElementById("mobile-menu").addEventListener("click", () => {
 
 // Slajdy
 var screens = [
-  "slidesImages/mobile_device.png",
-  "slidesImages/screen4.png",
-  "slidesImages/screenPizza.png",
-  "slidesImages/screenStronka.png",
+  {
+    imgAdress: "slidesImages/mobile_device.png",
+    link: "https://github.com/wojtekswietojanski/Time-tracking-dashboard-frontend-mentor",
+    yt: "https://youtu.be/KLZHeGf9r04",
+  },
+  {
+    imgAdress: "slidesImages/screen4.png",
+    link: "https://github.com/wojtekswietojanski/frontend-mentor-space-website",
+    yt: "https://youtu.be/37pAT5p4bPs",
+  },
+  {
+    imgAdress: "slidesImages/screenPizza.png",
+    link: "https://github.com/wojtekswietojanski/restaurant-website",
+    yt: "https://youtu.be/3mgHfkHqhYg",
+  },
+  {
+    imgAdress: "slidesImages/screenStronka.png",
+    link: "https://github.com/wojtekswietojanski?tab=repositories",
+    yt: "https://youtu.be/D5p3KA6XZfk",
+  },
+  {
+    imgAdress: "slidesImages/fastTyping.png",
+    link: "https://github.com/wojtekswietojanski/Fast-Typing-Game",
+    yt: "https://youtu.be/SgoI22JLiTA",
+  },
+  {
+    imgAdress: "slidesImages/reactScreen.png",
+    link: "https://github.com/wojtekswietojanski/React-pierwszy-projekt",
+    yt: "https://youtu.be/sAKVIKht5yE",
+  },
 ];
+
 var slideImgDiv = document.querySelector(".projectsImg");
 var innerDivs = slideImgDiv.querySelectorAll("div");
 var innerDivsArray = Array.from(innerDivs);
@@ -74,7 +109,8 @@ function changeSlides(x) {
 
 function showFoto() {
   for (let i = 0; i < innerDivsArray.length; i++) {
-    innerDivsArray[i].style.backgroundImage = "url(" + screens[i] + ")";
+    innerDivsArray[i].style.backgroundImage =
+      "url(" + screens[i].imgAdress + ")";
   }
 }
 
@@ -92,7 +128,40 @@ document.querySelector("#arrow1").addEventListener("click", () => {
   document.querySelector("#arrow1").classList.add("animationArrow");
 });
 
-document.addEventListener("DOMContentLoaded", showFoto());
+// Obsługa najechania myszą bądżź kliknięcia proejktu
+function projectHoverHandler(event) {
+  var buttonHover = event.currentTarget.querySelectorAll("button");
+  var linkHover = event.currentTarget.querySelectorAll("a");
+  buttonHover.forEach((button) => button.classList.toggle("hoverOverSlide"));
+  linkHover.forEach((link) => link.classList.toggle("hoverOverSlide"));
+  linkHover[0].setAttribute(
+    "href",
+    screens[innerDivsArray.indexOf(event.currentTarget)].link
+  );
+  linkHover[1].setAttribute(
+    "href",
+    screens[innerDivsArray.indexOf(event.currentTarget)].yt
+  );
+}
+
+function projectMouseOutHandler(event) {
+  var buttonHover = event.currentTarget.querySelectorAll("button");
+  var linkHover = event.currentTarget.querySelectorAll("a");
+  buttonHover.forEach((button) => button.classList.toggle("hoverOverSlide"));
+  linkHover.forEach((link) => link.classList.toggle("hoverOverSlide"));
+}
+
+function projectHover() {
+  for (let i = 0; i < innerDivsArray.length; i++) {
+    innerDivsArray[i].addEventListener("mouseover", projectHoverHandler);
+    innerDivsArray[i].addEventListener("mouseout", projectMouseOutHandler);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  showFoto();
+  projectHover();
+});
 
 // animacje przy scrollu
 
